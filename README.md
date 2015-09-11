@@ -12,4 +12,6 @@ Modeling partial feedback and final responses, along with any speech recognition
 
 This repository provides a basic implementation for subscribing to the Project Oxford client events and converting these events into a higher-order observable, i.e., IObservable<IObservable<T>>, where each inner observable is a single sequence of partial results terminated by a final result.
 
+Prior to running the sample in Playground, be sure to update the app setting for the Oxford primary key.
+
 For a more detailed summary, check out [this blog post](https://ericroz.wordpress.com/2015/08/31/reactive-extensions-for-project-oxford-speech-to-text/).
