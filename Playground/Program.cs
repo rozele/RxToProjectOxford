@@ -76,9 +76,8 @@ namespace Playground
         static IDisposable ReactiveSample(DataRecognitionClient client)
         {
             var disposable = new CompositeDisposable();
-            var counter = Enumerable.Range(0, int.MaxValue);
             var sentenceSubscriptions = client.GetResponseObservable()
-                .Zip(counter, (observable, count) => new { observable, count })
+                .Select((observable, count) => new { observable, count })
                 .Subscribe(
                     x => disposable.Add(x.observable.Subscribe(
                         phrases =>
